@@ -23,16 +23,6 @@ public class VehicleServiceImpl implements VehicleService {
     private final GarageService garageService;
     private final TicketService ticketService;
 
-
-    /**
-     * buraya geldiğinde garage'a gidip slot ataması yapılacak. ondan sonra kayıt atılacak
-     * slot kontrolü Garage servisinde yapılacak. uygun slot yok ise hata verecek
-     * var ise sonrasında garage service'e gidecek 1,2,3... sıralamasına göre en yakın ve boş olana yerleşecek
-     * garage tablosunda da araç ve slot bilgisi bulunacak
-     * save ederken slot bilgisi de vehicle tablosuna yazılacak
-     * aracın bilgisi ise ticket servise gidecek ve plaka bilgisi kayıt edilecek
-     */
-
     @Override
     public void saveVehicle(VehicleRequestDto requestDto) {
         Vehicle vehicle = modelMapper.map(requestDto, Vehicle.class);
